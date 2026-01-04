@@ -1,8 +1,0 @@
-{
-  "name": "Tegemea Virtual Assistants - Website 2026",
-  "description": "A premium, UK-based virtual assistant and operational support firm for elite founders and professional services.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
-}
