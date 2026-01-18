@@ -1,7 +1,22 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const BookConsultation: React.FC = () => {
+  useEffect(() => {
+    // Dynamically load the external script for the booking widget
+    const script = document.createElement('script');
+    script.src = 'https://tegemea.tegemea.uk/js/form_embed.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up the script if necessary
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <div className="fade-in min-h-screen bg-white">
       {/* Header */}
@@ -27,7 +42,7 @@ const BookConsultation: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mb-16">
             <div>
               <h2 className="text-2xl font-serif text-brand-navy mb-8">What to Expect</h2>
               <ul className="space-y-6">
@@ -50,10 +65,10 @@ const BookConsultation: React.FC = () => {
               <h2 className="text-2xl font-serif text-brand-navy mb-8">Who This Is For</h2>
               <ul className="space-y-6">
                 {[
-                  'Founders and consultants',
-                  'Professional service businesses',
-                  'Leaders managing growing workloads',
-                  'Organisations seeking reliable, UK-based support'
+                  'Directors',
+                  'Founders',
+                  'Consultants',
+                  'HR/Ops Managers'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start space-x-4 text-brand-charcoal/70 text-sm leading-relaxed">
                     <svg className="w-5 h-5 text-brand-gold/50 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,32 +84,32 @@ const BookConsultation: React.FC = () => {
             </div>
           </div>
 
-          {/* Approach */}
-          <div className="border-t border-brand-navy/10 pt-12 mb-12">
-            <h2 className="text-2xl font-serif text-brand-navy mb-6">Our Approach</h2>
-            <p className="text-brand-charcoal/70 leading-relaxed font-light mb-6">
-              Support at Tegemea is delivered through structured retainers rather than hourly, one-off work. This allows for consistency, accountability, and a high standard of service.
-            </p>
-            <p className="text-brand-navy font-medium italic">We are intentional about fit on both sides.</p>
-          </div>
+          {/* Booking Widget Section */}
+          <div className="bg-white border border-brand-navy/5 shadow-2xl rounded-sm overflow-hidden p-1 md:p-4">
+            <div className="text-center mb-8 pt-6">
+              <h2 className="text-3xl font-serif text-brand-navy mb-4">Select a Time</h2>
+              <p className="text-brand-stone text-sm uppercase tracking-widest">Discovery Call Scheduling</p>
+            </div>
+            
+            <div className="min-h-[700px] w-full bg-brand-sand/10">
+              <iframe 
+                src="https://tegemea.tegemea.uk/widget/booking/zCGeTLk5LRhbvZkFctFh" 
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px' }} 
+                scrolling="no" 
+                id="zCGeTLk5LRhbvZkFctFh_1762437269895"
+                title="Tegemea Booking Widget"
+              ></iframe>
+            </div>
 
-          {/* Form/CTA Section */}
-          <div className="bg-brand-navy text-white p-12 text-center shadow-2xl">
-            <h2 className="text-3xl font-serif mb-8 text-white">Book Your Consultation</h2>
-            <p className="text-white/60 mb-10 max-w-xl mx-auto text-sm font-light">
-              Please be ready to share a brief overview of your business, the support you are seeking, and any immediate priorities.
-            </p>
-            
-            <a 
-              href="mailto:inquiries@tegemea.co.uk?subject=Consultation Request"
-              className="inline-block px-12 py-5 bg-brand-gold text-brand-navy font-bold text-sm uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-xl shadow-brand-gold/20"
-            >
-              Request a Free Consultation
-            </a>
-            
-            <p className="mt-8 text-[10px] uppercase tracking-[0.3em] text-white/40">
-              Response typically within 24 business hours
-            </p>
+            <div className="text-center py-6 bg-brand-navy text-white/40 text-[10px] uppercase tracking-[0.3em]">
+              Encrypted & Secure Scheduling
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+             <p className="text-brand-stone text-xs font-light">
+               Problems with the widget? Email us directly at <a href="mailto:inquiries@tegemea.co.uk" className="text-brand-gold font-medium hover:underline">inquiries@tegemea.co.uk</a>
+             </p>
           </div>
         </div>
       </section>
