@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 interface NavbarProps {
@@ -41,22 +40,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
           >
             Join Us
           </button>
-          <a 
-            href="#how-it-works"
-            className="text-[11px] uppercase tracking-widest font-bold text-brand-navy/70 hover:text-brand-gold transition-colors duration-200"
-            onClick={(e) => {
-              if (currentView !== 'home') {
-                e.preventDefault();
-                onNavigate('home');
-                // Small delay to allow home to render before scrolling
-                setTimeout(() => {
-                  document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-              }
-            }}
-          >
-            How It Works
-          </a>
           <button 
             onClick={() => onNavigate('book')}
             className={`px-6 py-2.5 bg-brand-navy text-white text-[10px] uppercase tracking-widest font-bold hover:bg-brand-charcoal transition-all duration-300 ${currentView === 'book' ? 'ring-2 ring-brand-gold ring-offset-2' : ''}`}

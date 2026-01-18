@@ -1,17 +1,15 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Trust from './components/Trust';
 import Services from './components/Services';
 import OperationalAssessment from './components/OperationalAssessment';
-import HowItWorks from './components/HowItWorks';
-import Testimonials from './components/Testimonials';
 import JoinUs from './components/JoinUs';
 import BookConsultation from './components/BookConsultation';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
+  // Navigation view state
   const [currentView, setCurrentView] = useState<'home' | 'services' | 'join' | 'book'>('home');
 
   useEffect(() => {
@@ -52,7 +50,7 @@ const App: React.FC = () => {
             
             <Trust />
 
-            {/* Media Recognition Section - Reduced Padding */}
+            {/* Media Recognition Section */}
             <section className="pt-2 pb-12 bg-white border-b border-brand-navy/5">
               <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="flex flex-col items-center justify-center text-center">
@@ -62,6 +60,7 @@ const App: React.FC = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="group flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12 grayscale hover:grayscale-0 transition-all duration-700"
+                    aria-label="Read our feature in The Times"
                   >
                     <span className="text-5xl md:text-8xl font-serif font-black tracking-tighter text-brand-navy border-b-4 border-transparent group-hover:border-brand-gold transition-all duration-500">THE TIMES</span>
                     <div className="flex flex-col items-center md:items-start">
@@ -75,13 +74,13 @@ const App: React.FC = () => {
               </div>
             </section>
 
-            {/* Strategic: Operational Precision Section - Reduced Padding */}
+            {/* Strategic: Operational Precision Section */}
             <section className="py-16 bg-brand-navy text-white">
               <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-5xl font-serif leading-tight">
                     Operational Precision <br/>
-                    <span className="italic text-brand-gold">for Complex Lives.</span>
+                    <span className="italic text-brand-gold">for Professional Service Leaders.</span>
                   </h2>
                   <p className="text-white/60 text-lg leading-relaxed font-light">
                     Tegemea bridges the gap between high-level ambition and ground-level execution. We provide the architecture for your success.
@@ -98,30 +97,32 @@ const App: React.FC = () => {
                 <div className="bg-brand-charcoal p-1 border border-white/10 shadow-2xl">
                   <img 
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
-                    alt="Architecture" 
+                    alt="Strategic business architecture and professional growth" 
                     className="w-full h-auto brightness-75 grayscale hover:grayscale-0 transition-all duration-700"
+                    loading="lazy"
                   />
                 </div>
               </div>
             </section>
 
-            {/* Editorial: About Section - Reduced Padding */}
+            {/* Editorial: About Section */}
             <section id="about" className="py-16 overflow-hidden bg-white">
               <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                   <div className="relative">
                     <img 
                       src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200" 
-                      alt="Founder of Tegemea"
+                      alt="Professional UK Virtual Assistant consultant"
                       className="w-full h-[600px] object-cover object-[center_20%] rounded-sm shadow-2xl transition-all duration-700 hover:scale-[1.02]"
+                      loading="lazy"
                     />
                     <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-brand-gold/10 -z-10"></div>
                   </div>
                   <div>
-                    <span className="text-brand-gold font-bold tracking-widest text-xs uppercase mb-4 block">About Tegemea</span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-brand-navy mb-8 leading-tight">
+                    <h2 className="text-brand-gold font-bold tracking-widest text-xs uppercase mb-4 block">About Tegemea</h2>
+                    <h3 className="text-4xl md:text-5xl font-serif text-brand-navy mb-8 leading-tight">
                       Born from a need for <span className="italic">actual</span> ownership.
-                    </h2>
+                    </h3>
                     <p className="text-lg text-brand-charcoal/70 font-light leading-relaxed mb-8">
                       The virtual assistant marketplace is saturated with task-takers. We built Tegemea for the 1% of founders who don't want a "freelancer" to manage—they want a firm that manages itself.
                     </p>
@@ -144,14 +145,9 @@ const App: React.FC = () => {
               </div>
             </section>
 
-            {/* Monolith: Process Section */}
-            <HowItWorks />
-
-            <Testimonials />
-
             <OperationalAssessment onBook={() => navigateTo('book')} />
 
-            {/* Book CTA - Reduced Padding */}
+            {/* Book CTA */}
             <section id="book-cta" className="py-20 bg-brand-sand/20">
               <div className="max-w-4xl mx-auto px-6 text-center">
                 <h2 className="text-5xl font-serif text-brand-navy mb-8">Ready to reclaim your time?</h2>
@@ -186,13 +182,6 @@ const App: React.FC = () => {
               </div>
             </div>
             <Services onBook={() => navigateTo('book')} />
-            <div className="py-8 bg-white text-center">
-              <button 
-                 onClick={() => navigateTo('home')}
-                 className="text-brand-navy font-bold text-xs uppercase tracking-widest border-b border-brand-navy/20 pb-1 hover:text-brand-gold hover:border-brand-gold transition-all">
-                Back to Overview
-              </button>
-            </div>
           </div>
         )}
 
