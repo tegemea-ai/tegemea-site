@@ -9,7 +9,7 @@ import BookConsultation from './components/BookConsultation';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  // Navigation view state
+  // Navigation view state restricted to current architecture
   const [currentView, setCurrentView] = useState<'home' | 'services' | 'join' | 'book'>('home');
 
   useEffect(() => {

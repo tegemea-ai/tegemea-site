@@ -108,7 +108,7 @@ const BookConsultation: React.FC = () => {
           
           <div className="mt-12 text-center">
              <p className="text-brand-stone text-xs font-light">
-               Problems with the widget? Email us directly at <a href="mailto:inquiries@tegemea.co.uk" className="text-brand-gold font-medium hover:underline">inquiries@tegemea.co.uk</a>
+               Problems with the widget? Email us directly at <a href="mailto:info@tegemea.com" className="text-brand-gold font-medium hover:underline">info@tegemea.com</a>
              </p>
           </div>
         </div>

@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <h4 className="font-medium mb-6 uppercase tracking-widest text-xs text-brand-gold">Contact</h4>
             <ul className="space-y-4 text-white/50 text-sm font-light">
               <li>London, United Kingdom</li>
-              <li>inquiries@tegemea.co.uk</li>
+              <li><a href="mailto:info@tegemea.com" className="hover:text-white transition-colors">info@tegemea.com</a></li>
               <li>+44 (0) 20 8123 4567</li>
             </ul>
           </div>

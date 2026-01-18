@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const JoinUs: React.FC = () => {
@@ -175,7 +174,7 @@ const JoinUs: React.FC = () => {
             If you are an experienced Virtual Assistant who values professionalism, discretion, and meaningful work, we would welcome your application.
           </p>
           <a 
-            href="mailto:careers@tegemea.co.uk"
+            href="mailto:info@tegemea.com"
             className="inline-block px-12 py-5 bg-brand-gold text-brand-navy font-bold text-sm uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-xl shadow-brand-gold/10"
           >
             Apply to Join the Tegemea Team
